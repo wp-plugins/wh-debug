@@ -4,7 +4,7 @@ Plugin Name: WH Debug
 Description: Provides an api to place debug statements in code and view it on the admin page
 Author: Webhead LLC
 Author URI: http://webheadcoder.com 
-Version: 1.0
+Version: 1.1
 */
 
 /**
@@ -14,7 +14,8 @@ Version: 1.0
  *    if(function_exists('wh_debug')){ wh_debug('somename', 'some debug statement');}
  */
 function wh_debug($name, $value) {
-    update_option('wh_debug_' . $name, $value);
+	$time = current_time( 'timestamp' );
+    update_option('wh_debug_' . $time . '_' . $name, $value);
 }
 
 /**

@@ -2,8 +2,8 @@
 Contributors: webheadllc
 Tags: debug, development, developer tool
 Requires at least: 3.4.1
-Tested up to: 3.5.2
-Stable tag: 1.0
+Tested up to: 3.8
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ Development for this plugin is based on my needs and free time.
 
 = wh_debug($name, $value) =
 
-Adds $value to the options table with a 'wh_debug_' prefix.  Does not interrupt the normal flow of operations.
+Adds $value to the options table with a 'wh_debug_'<timestamp> prefix.  Does not interrupt the normal flow of operations.
 
 = wh_debug_hooks($hook_name, $echo=true) =
 
@@ -34,6 +34,9 @@ Programmatically activate/deactivate a plugin.
 Prints out all files leading up to the error.  Can ignore troublesome files/plugins.
 
 == Changelog ==
+
+= 1.1 =
+Added local timestamp to the meta key.
 
 = 1.0 =
 Initial release.
