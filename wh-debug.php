@@ -4,7 +4,7 @@ Plugin Name: WH Debug
 Description: Provides an api to place debug statements in code and view it on the admin page
 Author: Webhead LLC
 Author URI: http://webheadcoder.com 
-Version: 1.1
+Version: 1.2
 */
 
 /**
@@ -28,6 +28,22 @@ function wh_debug_hooks($hook_name, $echo=true) {
 		return $wp_filter[$hook_name];
 	}
 	print_r( $wp_filter[$hook_name]);	
+}
+
+/**
+ * Add this before get_posts or wp_query and the sql query will be revealed in the wh_debug log.
+ */
+function wh_debug_log_query() {
+	add_filter( 'query', '_wh_debug_log_query');
+}
+
+/**
+ * Internal method to log a query.
+ */
+function _wh_debug_log_query( $query ) {
+	remove_filter( 'query', '_wh_debug_log_query');
+	wh_debug( 'query', $query );
+	return $query;
 }
 
 /**

@@ -2,8 +2,8 @@
 Contributors: webheadllc
 Tags: debug, development, developer tool
 Requires at least: 3.4.1
-Tested up to: 3.8
-Stable tag: 1.1
+Tested up to: 3.9.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,7 +33,14 @@ Programmatically activate/deactivate a plugin.
 
 Prints out all files leading up to the error.  Can ignore troublesome files/plugins.
 
+= wh_debug_log_query() =
+
+Add this before any WP_Query or get_posts and the SQL query string will be added to the logs.
+
 == Changelog ==
+
+= 1.2 =
+Added logging of query.
 
 = 1.1 =
 Added local timestamp to the meta key.
